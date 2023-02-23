@@ -6,9 +6,15 @@
 
 - The AVI files must have the date in this format in its name: YYYYMMDDHHMMSS
   - All the AVI names will be read and the data will be collected and be stored in a database called "relatorio.txt"
-  - The size of the AVI file will be collected in MB and verify if it is 0MB, these are the corrupted files. The number of those files will be counted and stored in "relatorio.txt".
+  - The size of the AVI file will be collected in MB and verify if it is 0MB, these are the corrupted files. The number of those files will be counted and stored in "verificar_dados.txt".
+  -all the corrupted files will be listed in missing_data.txt (data, hora, pasta)
 - Drop the batchfile where the AVI files are located
 
 <h2> Next steps </h2>
 
 - Find a way to store the missing time in "relatorio.txt"
+  - Store the next video time in another column in missing_files.txt
+  - If the diference in time of the videos is more than 12 minutes, the next row of missing_files.txt is 
+  
+  > ,,missing_files.txt
+  
