@@ -1,4 +1,5 @@
 @echo off
+color a
 echo Gerando arquivos...
 setlocal EnableDelayedExpansion
 
@@ -6,12 +7,18 @@ rem definindo as variaveis de caminho e arquivos a serem criados
 set "dir=%CD%"
 set "relatorio=%~dp0\relatorio.txt"
 set "verificar_dados=%~dp0\verificar_dados.txt"
+set "missing_data=%~dp0\missing_data.txt"
 
 rem verifica se existe
 if exist "%relatorio%" del "%relatorio%"
 if exist "%verificar_dados%" del "%verificar_dados%"
+if exist "%missing_data%" del "%missing_data%"
 
+rem escrevendo o cabecalho dos arquivos
 echo dia, mes, ano, hora, minuto, segundo, MB, caminho, nome >> "%relatorio%"
+echo nome, qtdd_total,danif,arq_OK >> "%verificar_dados%"
+echo data, hora, pasta >> "%missing_data%"
+
 rem loop para pegar as informacoes de nome do arquivo, tamanho do arquivo, ano, mes e dia
 for /r "%dir%" %%f in (*.avi) do (
   set "fullname=%%~nxf"
@@ -27,10 +34,15 @@ for /f "tokens=2 delims=_" %%a in ("!fullname!") do set "data_hora=%%a"
 
   rem coloca os dados no arquivo txt
   echo !dia!, !mes!, !ano!, !hora!, !minuto!, !segundo!, !filesize! MB, %%~dpf, !fullname! >> "%relatorio%"
-)
+ 
+  rem check for 0MB files and add data to missing_data file
+  if !filesize! equ 0 (
+    set "folder=%%~dpf"
+    set "folder=!folder:%cd%\=!"
+    echo !dia!/!mes!/!ano!, !hora!:!minuto!:!segundo!, !folder! >> "%missing_data%"
+  )
 
-rem cria cabecalho do arquivo relatorio
-echo nome, qtdd_total,danif,arq_OK >> "%verificar_dados%"
+)
 
 rem define as variaveis de conrtagem e conta quantos arquivos tem em cada pasta
 for /d /r "%dir%" %%d in (*) do (
