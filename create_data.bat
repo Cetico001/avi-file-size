@@ -16,7 +16,7 @@ if exist "%missing_data%" del "%missing_data%"
 
 rem escrevendo o cabecalho dos arquivos
 echo dia, mes, ano, hora, minuto, segundo, MB, caminho, nome >> "%relatorio%"
-echo nome, qtdd_total,danif,arq_OK >> "%verificar_dados%"
+echo nome, qtdd_total,arq_OK,danif >> "%verificar_dados%"
 echo data, hora, pasta >> "%missing_data%"
 
 rem loop para pegar as informacoes de nome do arquivo, tamanho do arquivo, ano, mes e dia
