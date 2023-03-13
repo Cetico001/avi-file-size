@@ -18,6 +18,6 @@
 
 <h2> Next steps </h2>
 
-- Find a way get if its missing some file
-  - Diminuir o final do video com o inicio e verificar se há muita diferença. Se houver uma grqande diferença então há vídeos faltando.
+- Caminhos de cada vídeo que está faltando, ou está corrompido.
+- Fazer relatorios por pastas de cada ponto.
   
