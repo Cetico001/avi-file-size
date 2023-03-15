@@ -1,4 +1,4 @@
-<h1> BATCH file that scans corrupted AVI files from cameras </h1>
+<h1> BATCH file that scans corrupted AVI files from cameras (create_data.bat or RelatorioREvXX.bat) </h1>
 
 <h6>The BATCH file is used because of its facility of use for people who don't know how to intall any IDE or program language </h6>
 <h6> Context: The researchers install and configure cameras in the road with output of a bunch of AVI files with nearly 8~12 minutes each. Some files are corrupted in the process and the file is empty. To check easily if the videos are or not corrupted, the researchers use this BATCH file in their computer and its output is 3 TXT files with a report of the files in the path. </h6>
@@ -21,3 +21,19 @@
 - Caminhos de cada vídeo que está faltando, ou está corrompido.
 - Fazer relatorios por pastas de cada ponto.
   
+<h1> BATCH file that scans corrupted AVI files from cameras: RESEARCHERS (gera_relatorio.bat) </h1>
+
+<h6> This is a code made mainly for the use of the researchers and shows the corrupted files and if it is missing any file </h6>
+
+> Status: development
+
+- Simply put the BATCH file in the folder where the points of the research are located, as you can see below:
+![image](https://user-images.githubusercontent.com/84081250/225407289-89902e51-fe29-489f-882a-c13ce08bbfca.png) 
+
+The folder the code is located should look like the image above.
+
+- Then double-click in BATCH file and it will generate a TXT file in each point folder.
+
+
+<h2> Next steps </h2>
+- 
