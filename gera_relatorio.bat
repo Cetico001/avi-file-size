@@ -3,7 +3,7 @@ echo Gerando arquivos...
 setlocal EnableDelayedExpansion
 
 rem definindo as variaveis de caminho e arquivos a serem criados
-set "dir=Z:\Pesquisa\Teste_Relatorio de Campo_Leandro-Leticia\Leandro\EIXO SP - 01-08-22 EQUIPE 01\L6C P01.1 - FTR38"
+set "dir=%CD%"
 set "relatorio=dir\relatorio.txt"
 set "verificar_dados=dir\verificar_dados.txt"
 set /a cont=0
