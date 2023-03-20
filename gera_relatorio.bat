@@ -4,8 +4,8 @@ setlocal EnableDelayedExpansion
 
 rem definindo as variaveis de caminho e arquivos a serem criados
 set "dir=%CD%"
-set "relatorio=dir\relatorio.txt"
-set "verificar_dados=dir\verificar_dados.txt"
+set "relatorio=%~dp0\relatorio.txt"
+set "verificar_dados=%~dp0\verificar_dados.txt"
 set /a cont=0
 set /a novosminutos=0
 set /a ante=0
